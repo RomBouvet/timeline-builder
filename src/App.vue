@@ -1,20 +1,34 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import CustomTimeline from './components/CustomTimeline.vue'
+
+const events = [
+  {
+    name: 'Event 1',
+    date: 10,
+    description: 'Lorem ipsus'
+  },
+  {
+    name: 'Event 2',
+    date: 20,
+    description: 'Lorem ipsus'
+  },
+  {
+    name: 'Event 0',
+    date: -10,
+    description: 'Lorem ipsus'
+  },
+  {
+    name: 'Origin',
+    date: 0,
+    description: 'Lorem ipsus'
+  },
+]
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="wrapper">
+    <CustomTimeline :events="events"/>
+  </div>
 </template>
 
 <style scoped>
