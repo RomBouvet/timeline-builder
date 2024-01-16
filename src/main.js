@@ -2,5 +2,9 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import Vueform from '@vueform/vueform'
+import vueformConfig from './../vueform.config'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(Vueform, vueformConfig)
+app.mount('#app')

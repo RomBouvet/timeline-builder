@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <Vueform>
+      <TextElement
+        name="text"
+        label="Text"
+      />
+      <TextElement
+        name="number"
+        input-type="number"
+        :rules="[
+            'nullable',
+            'numeric',
+        ]"
+        autocomplete="off"
+        label="Number"
+      />
+      <TextareaElement
+        name="textarea"
+        label="Textarea"
+      />
+    </Vueform>
+  </div>
+</template>
+
