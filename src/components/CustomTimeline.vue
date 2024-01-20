@@ -1,9 +1,9 @@
 <template>
-    <div v-for="event, i in sortedEvents" :key="i">
+    <div class="wrapper" v-for="event, i in sortedEvents" :key="i">
         <div class="block">
-            <h3>{{event.name}}</h3>
-            <b>{{event.date}}</b>
-            <i>{{event.description}}</i>
+            <h3>{{ event.name }}</h3>
+            <b>{{ event.date }}</b>
+            <i>{{ event.description }}</i>
         </div>
     </div>
 </template>
@@ -17,9 +17,13 @@ const props = defineProps({
         required: true,
     },
     units: {
-        type: Array,
-        default: () => (["BC, AC"])
+        type: String,
+        default: 'years'
     },
+    originName: {
+        type: String,
+        default: 'Christ'
+    }
 })
 
 const sortedEvents = ref([]);
@@ -40,12 +44,19 @@ watchEffect(() => {
 </script>
 
 <style>
-.block{
+.wrapper {
     display: flex;
-    flex-direction :column;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
     border: 1px solid beige;
     border-radius: 5px;
     margin: 10px;
     padding: 5px 10px;
+    width: 300px;
 }
 </style>
